@@ -1,11 +1,22 @@
 # Geometric Solver and Visualizer for 2D Generic Belt Systems
 
-This module provides the `Belt` and `Circle` classes to define, validate, and solve the geometry of a closed-loop belt-like system with no restrictions on the number of pulleys. It also supports custom routing topologies (front/back) via the `BeltFace` class, and dynamic length optimization via SciPy. Visualization is provided through Matplotlib. Axes and Figures are returned.
+This module provides the `Belt` and `Circle` classes to define, validate, and solve the belt geometry of a closed-loop belt system with no restrictions on the number of pulleys. It also supports custom routing topologies (front/back) via the `BeltFace` class, and two ways to achieve a desired target belt length via `SciPy` using a secant method. Visualization is provided through Matplotlib. Axes and Figures are returned.
+
+If you find any bugs
+
+## Installation
+Install using pip:
+```commandline
+pip install pybeltsolver
+```
+
 
 ## Examples
 
 ### Standard 2-Pulley System
 ```python
+from pybeltsolver import Circle, BeltFace, Belt
+
 c1 = Circle(40.0, (0, 0), name="Drive Motor")
 c2 = Circle(40.0, (250, 0), name="Driven Wheel")
 
@@ -19,6 +30,7 @@ belt.plot()
 
 ### Three-Pulley System with Mixed Routing and Optimization
 ```python
+from pybeltsolver import Circle, BeltFace, Belt
 import numpy as np
 
 c1 = Circle(52 * 2 / np.pi / 2, (0, 0), name="c1")
@@ -41,6 +53,8 @@ belt.plot()
 
 ### 4-Pulley System (Default Topology)
 ```python
+from pybeltsolver import Circle, BeltFace, Belt
+
 c1 = Circle(40.0, (0, 0), name="c1")
 c2 = Circle(40.0, (250, 0), name="c2")
 c3 = Circle(20.0, (240, -75), name="c3")
