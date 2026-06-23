@@ -2,8 +2,6 @@
 
 This module provides the `Belt` and `Circle` classes to define, validate, and solve the belt geometry of a closed-loop belt system with no restrictions on the number of pulleys. It also supports custom routing topologies (front/back) via the `BeltFace` class, and two ways to achieve a desired target belt length via `SciPy` using a secant method. Visualization is provided through Matplotlib. Axes and Figures are returned.
 
-If you find any bugs
-
 ## Installation
 Install using pip:
 ```commandline
